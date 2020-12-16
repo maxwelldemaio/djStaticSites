@@ -1,0 +1,33 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1>Hello, World</h1>
+        <p>Welcome to my blog</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>About</h2>
+            <p>{% lorem %}</p>
+        </div>
+        <div class="col-md-6">
+            <h2>Contact</h2>
+            <p>{% lorem %}</p>
+            <p>
+                <!-- Bring us to contact page using slug -->
+                <a class="btn btn-default" href="{%url 'page' 'contact' %}" role="button">
+                    Contact us
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<footer>
+    <div class="container">
+        <p>&copy; Max DeMaio {% now 'Y' %}</p>
+    </div>
+</footer>

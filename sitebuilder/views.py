@@ -26,6 +26,13 @@ def get_page_or_404(name):
     return page
 
 def page(request, slug='index'):
-    # TODO: learn what slugs are in Django
+    # Slug has a default to index if kwarg not specified
     """ Render the requested page if found """
-    
+    file_name = f'{slug}.html'
+    page = get_page_or_404(file_name)
+    context = {
+        'slug': slug,
+        'page': page,
+    }
+    # Build layout with requested page as context
+    return render(request, 'page.html', context)
