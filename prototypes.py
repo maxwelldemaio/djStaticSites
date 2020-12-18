@@ -24,7 +24,11 @@ settings.configure(
     ),
     STATIC_URL='/static/',
     # Directory where all our prototype templates will live
-    SITE_PAGES_DIRECTORY=os.path.join(BASE_DIR, 'pages')
+    SITE_PAGES_DIRECTORY=os.path.join(BASE_DIR, 'pages'),
+    # Where our complete HTML files will be generated
+    SITE_OUTPUT_DIRECTORY=os.path.join(BASE_DIR, '_build'),
+    # Enable static content to live inside the build directory
+    STATIC_ROOT=os.path.join(BASE_DIR, '_build', 'static'),
 )
 
 
