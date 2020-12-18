@@ -14,6 +14,7 @@ settings.configure(
     INSTALLED_APPS=(
         'django.contrib.staticfiles',
         'sitebuilder',
+        'compressor',
     ),
     TEMPLATES=(
         {
@@ -29,6 +30,12 @@ settings.configure(
     SITE_OUTPUT_DIRECTORY=os.path.join(BASE_DIR, '_build'),
     # Enable static content to live inside the build directory
     STATIC_ROOT=os.path.join(BASE_DIR, '_build', 'static'),
+    # Required for django-compressor
+    STATICFILES_FINDERS=(
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        'compressor.finders.CompressorFinder',
+    ),
 )
 
 
